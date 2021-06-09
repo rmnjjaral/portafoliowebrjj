@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>RMNJARAL</title>
+
+		<link rel="stylesheet" type="text/css" href="css/estilos.css"></link>
+	</head>
+	<body>
+		<!-- -->
+		<main>
+			<header>
+				<div id="logo"><img src="images/RMNJARAL.png"></div>
+				<nav>
+					<div class = "menup"><a href= "acercademi.html">ACERCA DE MI</a></div>
+					<div class = "menup"><a href="galeria.html">GALERIA</a></div>
+					<div class="menup"><a href="https://www.instagram.com/rmnjjaral/">CONTACTO</a></div>
+				</nav>
+			</header>
+		</main>
+		<script
+			link rel="preconnect" href="https://fonts.gstatic.com"
+			link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet"
+			  src="https://code.jquery.com/jquery-3.6.0.min.js"
+			  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+			  crossorigin="anonymous">
+  		</script>
+  		
+		<script>
+			$(document).ready(function(){
+				var	contadorflores=0;
+				var flores=["flor1.png", "flor2.png", "flor3.png"]
+
+				$(window).click(function(e){
+					contadorflores++
+					var x = e.pageX //- e.target.offsetLeft; 
+    				var y = e.pageY //- e.target.offsetLeft;
+    				var numrandom = Math.round(Math.random()*2)
+					var flor = $(`<img src='flores/${flores[numrandom]}' class='posflor' id='flor${contadorflores}' style="left:calc( ${x}px - 100px );top: calc( ${y}px - 100px )">`)
+					 
+    					$("body").append(flor)
+    					$(flor).delay(15000).fadeOut(function(){
+    						$(this).remove()
+    					})
+    				
+				})
+			})
+			function scrollHastaAcercademi(){
+				alert(11111);	
+			}
+
+			var puntos = 20;
+		</script>
+	</body>
+</html>
